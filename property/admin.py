@@ -9,6 +9,7 @@ class FlatAdmin(admin.ModelAdmin):
     list_display = ['full_address_name', 'price', 'new_building', 'construction_year', ]
     list_editable = ['new_building', ]
     list_filter = ['new_building', ]
+    raw_id_fields = ['liked_by', ]
 
     def full_address_name(self, obj):
         return obj.town, obj.town_district, obj.address, obj.floor
