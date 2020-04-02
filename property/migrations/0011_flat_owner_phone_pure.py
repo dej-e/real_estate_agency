@@ -7,13 +7,13 @@ import phonenumber_field.modelfields
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('property', '0011_auto_20200331_2054'),
+        ('property', '0010_auto_20200331_2054'),
     ]
 
     operations = [
         migrations.AddField(
             model_name='flat',
             name='owner_phone_pure',
-            field=phonenumber_field.modelfields.PhoneNumberField(null=True,blank=True, max_length=128, region=None),
+            field=phonenumber_field.modelfields.PhoneNumberField(null=True,blank=True, max_length=128, region=None, db_index=True),
         ),
     ]

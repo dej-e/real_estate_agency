@@ -24,7 +24,7 @@ def phone_number_backward(apps, schema_editor):
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('property', '0012_flat_owner_phone_pure'),
+        ('property', '0011_flat_owner_phone_pure'),
     ]
 
     operations = [

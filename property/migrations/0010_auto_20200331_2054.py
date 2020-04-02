@@ -7,13 +7,14 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('property', '0010_auto_20200331_2053'),
+        ('property', '0009_flat_liked_by'),
     ]
 
     operations = [
         migrations.AlterField(
             model_name='flat',
             name='liked_by',
-            field=models.ManyToManyField(blank=True, db_index=True, related_name='liked_flats', to=settings.AUTH_USER_MODEL),
+            field=models.ManyToManyField(blank=True, db_index=True, related_name='users_liked',
+                                         to=settings.AUTH_USER_MODEL, verbose_name='Кло лайкнул'),
         ),
     ]
