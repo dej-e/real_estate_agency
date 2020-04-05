@@ -11,8 +11,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AddField(
-            model_name='complaint',
-            name='text',
+            model_name='complaint', name='text',
             field=models.TextField(default=None),
             preserve_default=False,
         ),

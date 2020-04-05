@@ -6,13 +6,14 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('property', '0014_auto_20200401_1530'),
+        ('property', '0013_auto_20200401_1530'),
     ]
 
     operations = [
         migrations.AddField(
             model_name='flat',
             name='owners',
-            field=models.ManyToManyField(blank=True, db_index=True, to='property.Owner', verbose_name='Владельцы'),
+            field=models.ManyToManyField(blank=True, db_index=True,
+                to='property.Owner', verbose_name='Владельцы'),
         ),
     ]

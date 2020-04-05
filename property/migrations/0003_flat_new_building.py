@@ -11,8 +11,10 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AddField(
-            model_name='flat',
-            name='new_building',
-            field=models.NullBooleanField(db_index=True, verbose_name='Новостройка'),
+            model_name='flat', name='new_building',
+            field=models.NullBooleanField(
+                db_index=True,
+                verbose_name='Новостройка'
+            ),
         ),
     ]

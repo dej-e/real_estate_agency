@@ -15,11 +15,19 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='complaint',
             name='flat',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='flats', to='property.Flat', verbose_name='Квартира, на которую жаловались'),
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name='complaints', to='property.Flat',
+                verbose_name='Квартира, на которую жаловались'
+            ),
         ),
         migrations.AlterField(
             model_name='complaint',
-            name='user',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='users', to=settings.AUTH_USER_MODEL, verbose_name='Кто жаловался'),
+            name='complainant',
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name='complaints', to=settings.AUTH_USER_MODEL,
+                verbose_name='Кто жаловался'
+            ),
         ),
     ]

@@ -9,7 +9,10 @@ def normalize_phone_number(apps, schema_editor):
         normalized_number = phonenumbers.parse(flat.owners_phonenumber, 'RU')
         formatted_number = None
         if phonenumbers.is_valid_number(normalized_number):
-            formatted_number = phonenumbers.format_number(normalized_number, phonenumbers.PhoneNumberFormat.E164)
+            formatted_number = phonenumbers.format_number(
+                normalized_number,
+                phonenumbers.PhoneNumberFormat.E164
+            )
         flat.owner_phone_pure = formatted_number
         flat.save()
 
@@ -24,9 +27,12 @@ def phone_number_backward(apps, schema_editor):
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('property', '0011_flat_owner_phone_pure'),
+        ('property', '0010_flat_owner_phone_pure'),
     ]
 
     operations = [
-        migrations.RunPython(normalize_phone_number, phone_number_backward)
+        migrations.RunPython(
+            normalize_phone_number,
+            phone_number_backward
+        )
     ]

@@ -13,11 +13,16 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='flat',
             name='construction_year',
-            field=models.IntegerField(blank=True, db_index=True, null=True, verbose_name='Год постройки здания'),
+            field=models.IntegerField(
+                blank=True, db_index=True,
+                null=True, verbose_name='Год постройки здания'
+            ),
         ),
         migrations.AlterField(
-            model_name='flat',
-            name='living_area',
-            field=models.IntegerField(blank=True, db_index=True, null=True, verbose_name='количество жилых кв.метров'),
+            model_name='flat', name='living_area',
+            field=models.IntegerField(
+                blank=True, db_index=True,
+                null=True, verbose_name='количество жилых кв.метров'
+            ),
         ),
     ]
